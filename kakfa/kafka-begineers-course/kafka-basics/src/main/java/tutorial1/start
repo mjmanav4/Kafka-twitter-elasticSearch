@@ -1,0 +1,16 @@
+zookeeper-server-start.sh config/zookeeper.properties
+
+kafka-server-start.sh config/server.properties
+
+
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-fourth-application --describe
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic important_tweets --from-beginning
+
+
+
+
+
+
+
+kafka-topics.sh --zookeeper 127.0.0.1:2181 --create --topic important_tweets --partitions 3 --replication-factor 1
